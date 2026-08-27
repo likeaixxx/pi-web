@@ -1,8 +1,11 @@
 {
-  "name": "@agegr/pi-web",
+  "name": "@likeaixxx/pi-web",
   "version": "0.8.11",
   "description": "Web UI for the pi coding agent",
   "homepage": "https://github.com/agegr/pi-web#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/agegr/pi-web.git"
