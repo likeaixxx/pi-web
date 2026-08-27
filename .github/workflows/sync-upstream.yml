@@ -34,10 +34,16 @@ jobs:
         id: check_changes
         run: |
           git fetch origin main
-          if git merge-base --is-ancestor upstream/main HEAD; then
-            echo "has_changes=false" >> $GITHUB_OUTPUT
-          else
+          # 手动触发时强制发布
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            # 定时任务时才检查是否有上游改动
+            if git diff --quiet HEAD upstream/main; then
+              echo "has_changes=false" >> $GITHUB_OUTPUT
+            else
+              echo "has_changes=true" >> $GITHUB_OUTPUT
+            fi
           fi
 
       - name: Merge upstream/main into main
