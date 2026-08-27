@@ -96,7 +96,7 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@likeaixxx'
 
-      - name: Install dependencies
+      - name: Build Package
         if: steps.check_changes.outputs.has_changes == 'true'
         run: npm install && npm run build
 
