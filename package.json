@@ -1,6 +1,6 @@
 {
   "name": "@likeaixxx/pi-web",
-  "version": "0.8.20",
+  "version": "0.8.21",
   "description": "Web UI for the pi coding agent",
   "homepage": "https://github.com/agegr/pi-web#readme",
   "publishConfig": {
